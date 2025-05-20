@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://prestigeempire.website/sitemap.xml

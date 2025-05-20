@@ -1,0 +1,37 @@
+---
+permalink: /404.html
+layout: default
+---
+
+<div class="error-container" style="text-align: center; padding: 4rem 1rem; max-width: 700px; margin: 0 auto;">
+  <h1 class="gradient-text" style="font-size: 5rem; margin-bottom: 1rem;">404</h1>
+  <p style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-secondary);">
+    <strong>Page not found</strong>
+  </p>
+  <p style="margin-bottom: 2rem;">The luxury experience you're looking for may have been moved or no longer exists.</p>
+  
+  <div class="search-bar" style="max-width: 500px; margin: 2rem auto;">
+    <form id="search-form-404" class="search-form">
+      <input type="text" id="search-input-404" placeholder="Search Prestige Empire..." style="width: 100%;" />
+      <button type="submit" class="search-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </form>
+  </div>
+  
+  <a href="{{ '/' | relative_url }}" class="contact-button" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Return to Homepage</a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('search-form-404');
+  searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const searchTerm = document.getElementById('search-input-404').value;
+    window.location.href = '{{ site.baseurl }}/articles/?q=' + encodeURIComponent(searchTerm);
+  });
+});
+</script>
