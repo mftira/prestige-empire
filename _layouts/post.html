@@ -70,3 +70,27 @@ layout: default
   </article>
 
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title }}",
+  "image": "{{ site.url }}{{ page.image | default: '/assets/images/logo.png' }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: site.author.name }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/images/logo.png"
+    }
+  },
+  "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}"
+}
+</script>
